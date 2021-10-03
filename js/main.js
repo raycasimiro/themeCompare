@@ -24,7 +24,7 @@ btnReset.addEventListener('click', function(){
 function prettyPrint(e){
     let ugly = JSON.parse('{}');
     try {
-        ugly = e.value !== '' ? JSON.parse(e.value) : JSON.parse('{}');
+        ugly = JSON.parse(e.value);
     } catch (e) {
         //syntax error
     }
