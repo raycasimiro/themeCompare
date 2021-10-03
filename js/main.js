@@ -1,6 +1,5 @@
 "use strict";
 
-
 const btnParseJSON = document.getElementById('btn_parseJSON');
 const btnReset = document.getElementById('btn_reset');
 const themeA = document.getElementById('theme_A');
@@ -22,13 +21,12 @@ btnReset.addEventListener('click', function(){
     iconDisplay.src = "./assets/undef.svg";
 });
 
-
 function prettyPrint(e){
-    let ugly= '';
+    let ugly = JSON.parse('{}');
     try {
         ugly = e.value !== '' ? JSON.parse(e.value) : JSON.parse('{}');
     } catch (e) {
-        ugly = JSON.parse('{}');
+        //syntax error
     }
     const pretty = JSON.stringify(ugly, undefined, 4);
     e.value = pretty
@@ -36,8 +34,11 @@ function prettyPrint(e){
 
 btnParseJSON.addEventListener('click', function(e){
     e.preventDefault();
-    const obj_A = themeA.value !== '' ? JSON.parse(themeA.value) : JSON.parse('{}');
-    const obj_B = themeB.value !== '' ? JSON.parse(themeB.value) : JSON.parse('{}');
+    // const obj_A = themeA.value !== '' ? JSON.parse(themeA.value) : JSON.parse('{}');
+    // const obj_B = themeB.value !== '' ? JSON.parse(themeB.value) : JSON.parse('{}');
+
+    const obj_A = JSON.parse(themeA.value);
+    const obj_B = JSON.parse(themeB.value);
 
     Object.keys(obj_A).forEach((key) => {
         if( key === 'paneldefaults' ){
