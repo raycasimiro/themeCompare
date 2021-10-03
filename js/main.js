@@ -67,11 +67,11 @@ btnParseJSON.addEventListener('click', function(e){
     const themeB_JSON = JSON.stringify(themeB_stripped);
 
     if(themeA_JSON === themeB_JSON){
-        console.log('equal!');
+        console.log('identical');
         iconDisplay.src = "./assets/check.svg";
     }
     else {
-        console.log('not equal');
+        console.log('not identical');
         iconDisplay.src = "./assets/xmark.svg";
     }   
 
