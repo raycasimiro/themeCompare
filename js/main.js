@@ -41,7 +41,7 @@ btnParseJSON.addEventListener('click', function(e){
     Object.keys(obj_A).forEach((key) => {
         if( key === 'paneldefaults' ){
             obj_A[key].forEach((item) => {
-                themeA_stripped[item.match_panel_title] = { options: item.options, styles: item.styles, usable: item.usable };
+                themeA_stripped[item.match_panel_title] = { options: item.options, styles: item.styles, contents: item.contents, usable: item.usable };
             })
         }
         else if( key === 'themeStyle' ){
@@ -53,7 +53,7 @@ btnParseJSON.addEventListener('click', function(e){
     Object.keys(obj_B).forEach((key) => {
         if( key === 'paneldefaults' ){
             obj_B[key].forEach((item) => {
-                themeB_stripped[item.match_panel_title] = { options: item.options, styles: item.styles, usable: item.usable };
+                themeB_stripped[item.match_panel_title] = { options: item.options, styles: item.styles, contents: item.contents, usable: item.usable };
             })
         }
         else if( key === 'themeStyle' ){
