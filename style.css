@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+    background: #fff;
+    color: #000;
+    font-family: Roboto, Helvetica, sans-serf;
+}
+
+/* sets the body height of the browser, so that backgrounds and div heights work correctly. Color and background will almost certainly be altered; they are just placeholders */
+
+
+/* sets the base font size for the document; turns on kerning pairs and ligatures */
+
+body,
+ul,
+ol,
+dl {
+    margin: 0;
+}
+
+article,
+aside,
+audio,
+footer,
+header,
+nav,
+section,
+video {
+    display: block;
+}
+
+/* ensures that older browsers will display HTML5 elements correctly */
+
+h1 {
+    margin-block-start: 0;
+    /* margin-block-end: 0; */
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-block-start: 0;
+    padding-block-end: 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+}
+
+p {
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-block-start: 0;
+    padding-block-end: 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+}
+
+/* sets hyphenation by default on paragraphs */
+
+textarea {
+    resize: vertical;
+}
+
+/* changes textarea resizing from "both" (UA default) to vertical only */
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    padding: .5rem;
+}
+
+/* causes tables to actually look like tables */
+
+img {
+    border: none;
+    max-width: 100%;
+}
+
+/* removes outlines from linked images (for older browsers and IE), sets up images for responsive design layout */
+
+input[type="submit"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner {
+    border: 0px;
+}
+
+/* removes the inner border effect from focused buttons for form elements in Firefox */
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+}
+
+input[type="submit"] {
+    -webkit-appearance: none;
+}
+
+/* removes the OS X appearance from HTML5 search inputs and submit buttons when viewed in Safari */
+
+input:required:after {
+    color: #f00;
+    content: " *";
+}
+
+/* sets up required form fields with the conventional following red asterix */
+input[type="email"]:invalid {
+    background: #f00;
+}
+
+/* causes a visual alert in browsers that do client-side checking of HTML5 email field – this may already be the default in some browsers. */
+
+.right {
+    float: right;
+    margin-left: 2rem;
+    clear: right;
+}
+
+.left {
+    float: left;
+    margin-right: 2rem;
+    clear: left;
+}
+
+/* allows a quick shortcut for floating elements left and right while avoiding the “float quirk” problem */
+
+sub,
+sup {
+    line-height: 0;
+}
+
+/* sets superscript and subscript text so that it doesn't throw off leading for elements in which they are included */
+
+nav {
+    min-height: 4rem;
+    padding: 1.6rem;
+    background-color: #343d4a;
+    color: #fff;
+    text-align: center;
+}
+
+.title {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 300;
+    font-size: .9rem;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* align-content: flex-start; */
+    /* flex-wrap: wrap; */
+    background-color: #ebebeb;
+    padding: 1rem;
+    min-height: 90vh;
+    overflow: hidden;
+}
+
+.flex-item {
+    background-color: #465160;
+    min-height: 50px;
+    margin: .5rem;
+    border-radius: 2px;
+    padding: 1.5rem;
+    width: 500px;
+}
+
+.flex-btn-wrapper {
+    background-color: white;
+    min-height: 50px;
+    margin: .5rem;
+    border-radius: 2px;
+    padding: 1.5rem;
+    width: auto;
+    text-align: center;
+}
+
+
+textarea {
+    font-family: 'Source Code Pro', monospace;
+    font-size: .79rem;
+    font-weight: 300;
+    float: left;
+    width: 100%;
+    min-width: 200px;
+    min-height: 400px;
+    outline: none;
+    width: 100%;
+    color: #fff;
+    background-color: #262933;
+    border: none;
+    resize: vertical;
+    border-radius: 2px;
+}
+
+.btn {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 12px;
+    min-width: 120px;
+    /* width: 100%; */
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-font-smoothing: subpixel-antialiased;
+    height: 40px;
+    border: 2px solid transparent;
+    margin: 1rem 0;
+    border-radius: 2px;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: #61bfd3;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #52a1b3;
+    transition: background-color .2s;
+    cursor: pointer;
+}
+
+.btn-primary:active {
+    background-color: #3f8a9b;
+    transition: background-color .1s;
+    cursor: auto;
+}
+
+.btn-danger {
+    background-color: #FF8080;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #f17171;
+    transition: background-color .2s;
+    cursor: pointer;
+}
+
+.btn-danger:active {
+    background-color: #e26363;
+    transition: background-color .1s;
+    cursor: auto;
+}
+
+.label {
+    color: #5DBFD4;
+    line-height: 2rem;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.icons-wrapper {
+    max-width: 80px;
+    /* border: 1px solid red; */
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
+
+/* .flex-break {
+    flex-basis: 0;
+    height: 0;
+}
+
+@media screen and (max-width:641px) {
+    .flex-break {
+        flex-basis: 100%;
+    }
+} */
