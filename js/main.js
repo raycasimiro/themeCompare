@@ -22,15 +22,15 @@ function prettyPrint(e){
 
 themeA.addEventListener('keyup', ()=>prettyPrint(themeA));
 themeA.addEventListener('focus', function(){this.select();});
-themeA.addEventListener('change', function(){iconDisplay.src = "assets/undef.svg"});
+themeA.addEventListener('change', function(){iconDisplay.src = "./assets/undef.svg"});
 themeB.addEventListener('keyup', ()=>prettyPrint(themeB));
 themeB.addEventListener('focus', function(){this.select();});
-themeB.addEventListener('change', function(){iconDisplay.src = "assets/undef.svg"});
+themeB.addEventListener('change', function(){iconDisplay.src = "./assets/undef.svg"});
 
 btnReset.addEventListener('click', function(){
     themeA_stripped = {};
     themeB_stripped = {};
-    iconDisplay.src = "assets/undef.svg";
+    iconDisplay.src = "./assets/undef.svg";
 });
 
 btnParseJSON.addEventListener('click', function(e){
@@ -68,11 +68,11 @@ btnParseJSON.addEventListener('click', function(e){
 
     if(themeA_JSON === themeB_JSON){
         console.log('equal!');
-        iconDisplay.src = "assets/check.svg";
+        iconDisplay.src = "./assets/check.svg";
     }
     else {
         console.log('not equal');
-        iconDisplay.src = "assets/xmark.svg";
+        iconDisplay.src = "./assets/xmark.svg";
     }   
 
 });
