@@ -43,7 +43,12 @@ btnParseJSON.addEventListener('click', function(e){
     Object.keys(obj_A).forEach((key) => {
         if( key === 'paneldefaults' ){
             obj_A[key].forEach((item) => {
-                themeA_obj[item.match_panel_title] = { options: item.options, styles: item.styles, contents: item.contents, usable: item.usable };
+                themeA_obj[item.match_panel_title] = { 
+                    options: item.options, 
+                    styles: item.styles, 
+                    contents: item.contents, 
+                    usable: item.usable 
+                };
             })
         }
         else if( key === 'themeStyle' ){
@@ -55,7 +60,12 @@ btnParseJSON.addEventListener('click', function(e){
     Object.keys(obj_B).forEach((key) => {
         if( key === 'paneldefaults' ){
             obj_B[key].forEach((item) => {
-                themeB_obj[item.match_panel_title] = { options: item.options, styles: item.styles, contents: item.contents, usable: item.usable };
+                themeB_obj[item.match_panel_title] = { 
+                    options: item.options, 
+                    styles: item.styles, 
+                    contents: item.contents, 
+                    usable: item.usable 
+                };
             })
         }
         else if( key === 'themeStyle' ){
@@ -68,7 +78,7 @@ btnParseJSON.addEventListener('click', function(e){
     const themeA_JSON = JSON.stringify(themeA_obj);
     const themeB_JSON = JSON.stringify(themeB_obj);
 
-    if(themeA_JSON!=='{}' ||themeB_JSON!=='{}'){
+    if(themeA_JSON!=='{}' && themeB_JSON!=='{}'){
 
         if(themeA_JSON === themeB_JSON){
             console.log('identical');
@@ -79,5 +89,7 @@ btnParseJSON.addEventListener('click', function(e){
             iconDisplay.src = "./assets/xmark.svg";
         }
     }
+
+    else iconDisplay.src = "./assets/warn.svg";
 
 });
