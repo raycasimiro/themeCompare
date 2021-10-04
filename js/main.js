@@ -68,13 +68,16 @@ btnParseJSON.addEventListener('click', function(e){
     const themeA_JSON = JSON.stringify(themeA_obj);
     const themeB_JSON = JSON.stringify(themeB_obj);
 
-    if(themeA_JSON === themeB_JSON){
-        console.log('identical');
-        iconDisplay.src = "./assets/check.svg";
+    if(themeA_JSON!=='{}' ||themeB_JSON!=='{}'){
+
+        if(themeA_JSON === themeB_JSON){
+            console.log('identical');
+            iconDisplay.src = "./assets/check.svg";
+        }
+        else {
+            console.log('not identical');
+            iconDisplay.src = "./assets/xmark.svg";
+        }
     }
-    else {
-        console.log('not identical');
-        iconDisplay.src = "./assets/xmark.svg";
-    }   
 
 });
