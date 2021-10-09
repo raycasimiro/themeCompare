@@ -142,7 +142,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1.5rem;
+    padding: 2rem 1.5rem 1.5rem;
     max-height: 89vh;
     overflow: hidden;
 }
@@ -150,11 +150,10 @@ nav {
 
 .flex-textarea-wrapper {
     background-color: #465160;
-    /* min-height: 50px; */
     margin: .5rem .5rem 0;
     border-radius: 3px;
     padding: 0 1.5rem 1.5rem;
-    width: 500px;
+    width: 450px;
 }
 
 .flex-btn-wrapper {
@@ -175,11 +174,10 @@ textarea {
     float: left;
     width: 100%;
     outline: none;
-    width: 100%;
     color: #fff;
     background-color: #262933;
     border: none;
-    resize: vertical;
+    resize: none;
     border-radius: 3px;
 }
 
