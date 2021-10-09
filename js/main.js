@@ -154,13 +154,13 @@ function compare(e) {
          
             themeA_diff.value = '';
             themeB_diff.value = '';
-            modalBackdrop.style.display = "flex";
             themeA_label.innerText = themeNames[0];
             themeB_label.innerText = themeNames[1];
             let objA_stringParsed = JSON.parse(objA_string);
             let objB_stringParsed = JSON.parse(objB_string);
             themeA_diff.value = JSON.stringify(objA_stringParsed, null, 2);
             themeB_diff.value = JSON.stringify(objB_stringParsed, null, 2);
+            modalBackdrop.style.display = "flex";
         }
         themeNames.splice(0, themeNames.length);
     } 
