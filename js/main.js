@@ -162,7 +162,6 @@ function compare(e) {
             themeB_diff.value = JSON.stringify(objB_stringParsed, null, 2);
             modalBackdrop.style.display = "flex";
         }
-        themeNames.splice(0, themeNames.length);
     } 
     else {
         if(_.isEmpty(objA))
@@ -173,4 +172,5 @@ function compare(e) {
             
         iconDisplay.src = "./assets/warn.svg";
     }
+    themeNames.splice(0, themeNames.length);
 }
