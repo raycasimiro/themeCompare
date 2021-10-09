@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <style type="text/css">
+            img.preload { display: none; }
+    </style>
     <link rel="apple-touch-icon" sizes="57x57" href="./assets/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="./assets/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="./assets/favicon/apple-icon-72x72.png">
@@ -28,30 +31,87 @@
 
 <body>
     <head">
-        <nav> <span class="title">themeCompare <span style="font-size:.6rem;">v1.0</span></span> </nav>
+        <nav> <span class="title">themeCompare 🔍 <span style="font-size:.6rem;">v1.5</span></span> </nav>
         </head>
 
         <main>
             <form action="javascript:void(0);">
-                <div class="flex-container">
-                    <div class="flex-item">
-                        <span class="label">theme A</span>
-                        <textarea name="themeA" id="theme_A">{}</textarea>
+                <div class="flex-main">
+                    <div class="flex-textarea-wrapper">
+                        <span class="label" style="line-height: 3rem;">theme A</span>
+                        <span class="invalid-badge" id="invalid_badgeA" style="display:none;">invalid theme</span>
+                        <textarea class="textarea-main" name="themeA" id="theme_A">{}</textarea>
                     </div>
 
                     <div class="flex-btn-wrapper">
-                        <div class="icons-wrapper"><img id="icon_display" src="./assets/undef.svg" alt=""></div>
+                        <div class="icons-wrapper">
+                            <img id="icon_display" src="./assets/undef.svg" alt="">
+                            <img src="./assets/check.svg" alt="" class="preload">
+                            <img src="./assets/warn.svg" alt="" class="preload">
+                            <img src="./assets/xmark.svg" alt="" class="preload">
+                        </div>
                         <div><button class="btn btn-primary" type="submit" id="btn_parseJSON">Compare</button></div>
                         <div><button class="btn btn-danger" type="reset" id="btn_reset">Clear All</button></div>
                     </div>
 
-                    <div class="flex-item">
-                        <span class="label">theme B</span>
-                        <textarea name="themeB" id="theme_B">{}</textarea>
+                    <div class="flex-textarea-wrapper">
+                        <span class="label" style="line-height: 3rem;">theme B</span>
+                        <span class="invalid-badge" id="invalid_badgeB" style="display:none;">invalid theme</span>
+                        <textarea class="textarea-main" name="themeB" id="theme_B">{}</textarea>
                     </div>
                 </div>
             </form>
+            
+            <div id="modal_backdrop" class="modal">
+                <div id="modal_ErrWindow" class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="modal-message">
+                                <strong style="color:#ea5a5a">OH NO!</strong> 
+                                The themes are not identical! 😱
+                            </span>
+                            <span id="btn_closeModal" class="close">&times;</span>
+                        </div>
+                        <div style="width: 50%; padding: 15px 15px 0 10px">
+                            <fieldset>
+                                <legend class="label">theme A</legend>
+                                <div class="label-themeName">
+                                    <span id="themeA_label">noname</span>
+                                </div>
+                                <textarea class="textarea-diff" name="" id="themeA_diff" cols="30" rows="10" readonly="readonly"></textarea>
+                            </fieldset>
+                            
+                        </div>
+                        <div style="width: 50%; padding: 15px 10px 0px 15px;">
+                            <fieldset>
+                                <legend class="label">theme B</legend>
+                                <div class="label-themeName">
+                                    <span id="themeB_label">noname</span>
+                                </div>
+                                <textarea class="textarea-diff" name="" id="themeB_diff" cols="30" rows="10" readonly="readonly"></textarea>
+                            </fieldset>
+                        </div>
+                        <div style="width: 100%; padding: 0 10px 10px;">
+                            <button id="btnContent_closeModal" class="btn btn-primary" style="float:right; margin:.5rem 0 0;">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
+        <script>
+            if (document.images) {
+                    img0 = new Image();
+                    img1 = new Image();
+                    img2 = new Image();
+                    img3 = new Image();
+
+                    img0.src = "./assets/undef.svg";
+                    img1.src = "./assets/check.svg";
+                    img2.src = "./assets/warn.svg";
+                    img3.src = "./assets/xmark.svg";
+            }
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js" integrity="sha256-qXBd/EfAdjOA2FGrGAG+b3YBn2tn5A6bhz+LSgYD96k=" crossorigin="anonymous"></script>
         <script src="js/main.js"></script>
         <!-- END -->
 </body>
